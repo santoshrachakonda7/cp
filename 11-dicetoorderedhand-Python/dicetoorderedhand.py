@@ -10,6 +10,22 @@
 # assert(dicetoorderedhand(2,2,2) == 222)
 
 
+
 def dicetoorderedhand(a, b, c):
 	# your code goes here
-	pass
+	d = [a,b,c]
+	s = sorted(d, reverse=True)
+	#print(s)
+	return number(s)
+
+def number(n):
+	convert=[]
+	for integer in n:
+		convert.append(str(integer))
+	#print(convert)
+	t = "".join(convert)
+	z = int(t)
+	return z
+	#pass
+
+
