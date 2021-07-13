@@ -37,29 +37,36 @@ from collections import Counter
 
 def playstep2(hand, dice):
 	# your code goes here
-	x = [int(a) for a in str(hand)]
-	a=list(set(x))
+	x = [int(v) for v in str(hand)] # creating list
+	# removing duplicates
+	l=list(set(x)) 
 	
-	if len(a)==3:
-		a.sort(reverse=True)
-		z=str(a[0])
-		y=str(dice%100)
-		e=str(z+y)
-		res = int(''.join(sorted(e, reverse = True)))
+	#case1: when there are no duplicates
+	if len(l)==3:
+		#sorting the list in reverse order
+		l.sort(reverse=True)
+		y=str(l[0])
+		z=str(dice%100)
+		con=str(y+z)
+		#sorting the number of hand
+		result = int(''.join(sorted(con, reverse = True)))
 		t=dice//100
-		c=(res,t)
-		return c
+		p=(result,t)
+		return p
+
+	#case2: when there are duplicates
 	else:
-		
-		d=Counter(x)
-		for i in d:
-			if d[i]>1:
-				u=str(i)
-				g=str(u+u)
-				print("conter",g)
-				y=str(dice%10)
-				i=str(g+y)
-				res = int(''.join(sorted(i, reverse = True)))
+		#Counter is for counting the digits
+		c=Counter(x)
+		for i in c:
+			if c[i]>1:
+				m=str(i)
+				#concatinating same digits
+				n=str(m+m)
+				z=str(dice%10)
+				con=str(n+z)
+				#sorting the number of hand
+				result = int(''.join(sorted(con, reverse = True)))
 				t=dice//10
-				c=(res,t)
-				return c
+				p=(result,t)
+				return p
