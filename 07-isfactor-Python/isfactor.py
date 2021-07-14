@@ -6,4 +6,14 @@
 
 
 def fun_isfactor(f, n):
+	#if both are equal
+	if(f==n):
+		return True
+	#return false if f=0
+	elif(f==0):
+		return False
+	#check factorization
+	elif(n%f == 0):
+		return True
+	
 	return False # replace with your solution
