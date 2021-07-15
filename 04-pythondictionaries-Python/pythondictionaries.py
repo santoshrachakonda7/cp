@@ -43,6 +43,7 @@ def sortUSA():
                     #take cities
                     city = d['USA']
                     city.sort()
+                    print(city)
     return city
 def alphaAsia():
     '''Return all the cities in Asia continent in alphabetical order'''
@@ -57,6 +58,7 @@ def alphaAsia():
                 city = d[a][0] + " - " + a
                 li.append(city)
                 li.sort
+                print(li)
     return li
 
 # Note: Check for test cases to understand the output format.
