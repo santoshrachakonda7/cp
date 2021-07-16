@@ -6,4 +6,10 @@
 
 def fun_circlesintersect(x1, y1, r1, x2, y2, r2):
 	# your code goes here
+	#given circle centered points, find the distance
+	c = ((((x2 - x1) ** 2) + ((y2 - y1) ** 2)) ** 0.5)
+	#sum of radius
+	r = r1 + r2
+	if(c <= r):
+		return True
 	return False 
