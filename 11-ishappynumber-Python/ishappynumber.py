@@ -19,4 +19,21 @@
 
 def ishappynumber(n):
 	# your code goes here
-	pass
+	n = abs(n)
+	a = 0
+	l = list(("".join(i for i in str(n))))
+
+	if(len(l) == 1):
+		#check if n is 1 or not and return accordingly
+		if(n != 1):
+			return False
+		return True
+	else:
+		#sum of squares
+		for i in l:
+			m = int(i)
+			a += m*m
+		if(a == 1):
+			return True
+		else:
+			return ishappynumber(a)
