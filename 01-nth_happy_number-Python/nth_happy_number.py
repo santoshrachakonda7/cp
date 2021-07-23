@@ -14,6 +14,31 @@
 # assert(nth_happy_number(7) == 28)
 # assert(nth_happy_number(8) == 31)
 
-
 def nth_happy_number(n):
-	return 0
+	p = []
+	i = 0
+
+	def ishappynumber(n):
+		n = abs(n)
+		a = 0
+		l = list(("".join(i for i in str(n))))
+
+		if(len(l) == 1):
+			if n in [1, 7]:
+				p.append(j)
+		else:
+			for i in l:
+				m = int(i)
+				a += m*m
+			if(a == 1):
+				p.append(j)
+			else:
+				return ishappynumber(a)
+	
+	while(len(p) != n):
+		i = i + 1
+		j = i
+		ishappynumber(i)
+	else:
+		return (p[n-1])
+
