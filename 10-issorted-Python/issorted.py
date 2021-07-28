@@ -7,4 +7,16 @@
 
 def issorted(a):
 	# your code goes here
-	pass
+		z = 1
+		flag1 = True
+		flag2 = True
+		while(z<len(a)):
+			if(a[z] < a[z-1]):
+				flag1 = False
+			elif(a[z] > a[z-1]):
+				flag2 = False
+			z = z + 1
+		if(flag1 == True or flag2 == True):
+			return True
+		else:
+			return False
