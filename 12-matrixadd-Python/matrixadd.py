@@ -16,5 +16,18 @@
 # cannot be added because they are of different dimensions.
 
 def matrixadd(L, M):
-	# Your code goes here
-	pass
+	# Your code goes her
+	#if size is 1
+	if(len(L[0]) == len(M[0]) == 1):
+		N = L[0][0]+M[0][0]
+		return [[N]]
+	#if row and colomn dimensions are same
+	if(len(L) == len(M) and len(L[0]) == len(M[0]) and len(L[1]) == len(M[1])):
+		for i in range(len(L)):
+			for j in range(len(L[0])):
+				#matrix addition
+				N = [[L[i][j] + M[i][j] for j in range(len(L[0]))] for i in range(len(L))]
+				return N
+	#if dimensions are not same, return None
+	else:
+		return None
