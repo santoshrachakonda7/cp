@@ -22,4 +22,14 @@
 
 def inverselookandsay(a):
 	# Your code goes here
-	pass
+	#if a is non empty
+	if(len(a) >= 1 and len(a[0]) >= 1):
+		count = []
+		for i in a:
+			#i[0] is the number of times i[1] should be in the list
+			for j in range(i[0]):
+				count.append(i[1])
+		return count
+	#if a is empty
+	else:
+		return []
