@@ -10,5 +10,21 @@
 
 
 def fun_getaverage(s): 
-	return 0.0
-
+	#converting to a list
+	t = s.split(",")
+	li = []
+	for i in t:
+		#putting only the integers into a list
+		if(i.isdigit()):
+			li.append(int(i))
+	#if list is empty
+	if(len(li) == 0):
+		return 0.0
+	#if list is not empty, find average
+	else:
+		a = 0
+		for j in li:
+			a = a + j
+	
+		b = a/len(li)
+		return b
