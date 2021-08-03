@@ -12,6 +12,24 @@
 
 def areAnagrams(s1, s2):
     # Your code goes here...
-    pass
+    sl1 = s1.lower()
+    sl2 = s2.lower()
+    sl3 = []
+    if(len(sl1) == len(sl2)):
+        for x in sl1:
+            for y in sl2:
+                if(x == y):
+                    sl3.append(x)
+        if(len(sl3) == len(sl1)):
+            return True
+        else:
+            return False
 
+    else:
+        return False
 # write your test cases here...
+assert(areAnagrams("abc", "abc") == True)
+assert(areAnagrams("aBd", "DeA") == False)
+assert(areAnagrams("vdF", "fDVEm") == False)
+assert(areAnagrams("ABC", "cab") == True)
+print("All test cases passed... :-)")
